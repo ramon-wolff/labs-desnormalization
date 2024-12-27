@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Labs.Messaging.Consumer.Sync": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

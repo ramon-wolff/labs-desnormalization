@@ -1,0 +1,6 @@
+@Labs.Cache.API_HostAddress = http://localhost:5252
+
+GET {{Labs.Cache.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "9778195d-d365-4d31-8d1d-95308eab7d5d",
+		"name": "Labs Cache",
+		"description": "Queries e Commands para testar os processos de Desnormalização de dados com objetivo de consultar dados mais rapidamente.\n\n- Consulta na tabela normalizada\n    \n- Consulta na tabela desnormalizada\n    \n- Consulta em View Materializada\n    \n- Consulta em cache (Redis)\n    \n- Consulta no banco MongoDb\n    \n\nQualquer comando executado em um usuário invalida e recarrega todas as listas acima (com exceção da tabela Normalizada).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5673672"
+	},
+	"item": [
+		{
+			"name": "List",
+			"item": [
+				{
+					"name": "usersSummaryDb",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5252/api/usersSummary/db",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5252",
+							"path": [
+								"api",
+								"usersSummary",
+								"db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usersSummaryRedis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5252/api/usersSummary/redis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5252",
+							"path": [
+								"api",
+								"usersSummary",
+								"redis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usersSummaryMongoDb",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5252/api/usersSummary/mongo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5252",
+							"path": [
+								"api",
+								"usersSummary",
+								"mongo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usersSummaryMaterializedView",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5252/api/usersSummary/materializedview",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5252",
+							"path": [
+								"api",
+								"usersSummary",
+								"materializedview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usersSummaryDesnormalizedTable",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:5252/api/usersSummary/desnormalizedtable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5252",
+							"path": [
+								"api",
+								"usersSummary",
+								"desnormalizedtable"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Consultas para trazer toda a relação de usuários à partir do processo de desnormalização."
+		},
+		{
+			"name": "GetId",
+			"item": [
+				{
+					"name": "userSummaryMongoDb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:5252/api/usersSummary/mongo/user?userId=818d491a-b0f0-4d20-94aa-00004d1ad3ff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5252",
+							"path": [
+								"api",
+								"usersSummary",
+								"mongo",
+								"user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "818d491a-b0f0-4d20-94aa-00004d1ad3ff"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userSummaryMaterializedView",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:5252/api/usersSummary/materializedview/user?userId=818d491a-b0f0-4d20-94aa-00004d1ad3ff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5252",
+							"path": [
+								"api",
+								"usersSummary",
+								"materializedview",
+								"user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "818d491a-b0f0-4d20-94aa-00004d1ad3ff"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userSummaryDesnormalizedTable",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:5252/api/usersSummary/desnormalizedtable/user?userId=00333008-99F2-489D-B6E6-AB9469706D9B",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5252",
+							"path": [
+								"api",
+								"usersSummary",
+								"desnormalizedtable",
+								"user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "00333008-99F2-489D-B6E6-AB9469706D9B"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Consultas para trazer toda um único usuário à partir do processo de desnormalização."
+		},
+		{
+			"name": "Commands",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "postUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"EFDAA1F9-19B3-4571-98EA-C14B847E3C76\",\r\n  \"name\": \"Ramon\",\r\n  \"email\": \"ramon@teste.com.br\",\r\n  \"tenantId\": \"B713E5D7-6483-474D-A935-BA516751398F\",\r\n  \"roleId\": \"03EB4311-9CD8-4114-BF60-C326BF982403\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5252/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5252",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateUser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"002F75C0-5746-4595-93D1-4BA64A09B729\",\r\n  \"name\": \"Teste2\",\r\n  \"email\": \"teste2@teste.com.br\",\r\n  \"tenantId\": \"B713E5D7-6483-474D-A935-BA516751398F\",\r\n  \"roleId\": \"03EB4311-9CD8-4114-BF60-C326BF982403\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5252/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5252",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"002F75C0-5746-4595-93D1-4BA64A09B729\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5252/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5252",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Gestão de comandos em usuários."
+				}
+			],
+			"description": "Comandos para adicionar, atualizar e excluir um usuário fazendo com que as armazenagens de dados desnormalizados sejam invalidados e recarregados seguindo os processos definidos."
+		}
+	]
+}

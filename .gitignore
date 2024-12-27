@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/bin/Debug
+# Ignorar pastas Debug, Release e obj de todos os projetos
+**/Debug/
+**/Release/
+**/obj/
